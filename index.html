@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mona Network</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+    
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #07002e;
+    color: white;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+}
+.logo img{width:40px;}
+
+/* GROUP KANAN */
+.right-menu{
+    margin-left: auto;      /* 🔥 KUNCI PINDAH KE KANAN */
+    display: flex;
+    align-items: center;
+}
+
+/* NAV */
+nav{
+    display: flex;
+    margin-right: 20px;
+}
+nav a{
+    margin: 0 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* LANGUAGE */
+.lang-switch button{
+    background:none;
+    border:1px solid white;
+    color:white;
+    margin-left:10px;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+section{
+    padding: 120px 60px;
+    min-height: 100vh;
+}
+#beranda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #190052, #5100c9);
+}
+#beranda img{
+    width: 350px;
+    animation: float 3s infinite ease-in-out;
+}
+@keyframes float{
+    0%{ transform: translateY(0px); }
+    50%{ transform: translateY(-20px); }
+    100%{ transform: translateY(0px); }
+}
+#tentang{
+    background: #25028e;
+}
+#hubungi{
+    background: linear-gradient(90deg, #20006d, #4c00b5);
+}
+input, textarea{
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+}
+button{
+    margin-top: 20px;
+    padding: 14px 22px;
+    background: #ff4b4b;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+.btn{
+    margin-top: 30px;
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+.btn-outline{
+    border: 2px solid white;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+}
+.logo img{width:40px;}
+
+/* === TENTANG SECTION === */
+#tentang{
+    background: #25028e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* GROUP GAMBAR KOIN */
+.coin-group{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.coin-group img{
+    animation: float 3s infinite ease-in-out;
+}
+
+.coin-group img:first-child{
+    width: 250px;
+}
+
+.coin-group img:last-child{
+    width: 320px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px){
+    #tentang{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .coin-group{
+        flex-direction: column;
+    }
+}
+<!--------------------4elemen ------------------->
+.elemen-section{
+    display: flex;
+    justify-content: flex-end; /* ke kanan */
+    align-items: center;
+    padding: 80px 60px;
+}
+
+.roadmap-title{
+    font-size: 36px;
+    font-weight: 700;
+    color: #6ff3ff;
+    margin-bottom: 10px;
+}
+
+.elemen-image img{
+    width: 550px;   /* 👉 kecilkan di sini */
+    max-width: 100%;
+}
+
+.elemen-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 60px;
+}
+
+/* GRID KOTAK */
+.elemen-boxes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+}
+
+.box{
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(6px);
+}
+
+/* GAMBAR */
+.elemen-image{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.elemen-image img{
+    width: 550px;
+    max-width: 100%;
+}
+
+@media (max-width: 768px){
+    .elemen-section{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .elemen-boxes{
+        grid-template-columns: 1fr;
+    }
+
+    .elemen-image{
+        justify-content: center;
+    }
+}
+
+<!---------------   roadmap   -------------->
+
+.roadmap-section{
+    padding: 100px 60px;
+    background: radial-gradient(circle at top, #0d1440, #05001f);
+    text-align: center;
+}
+
+.elemen-title{
+    font-size: 36px;
+    font-weight: 700;
+    color: #6ff3ff;
+    margin-bottom: 10px;
+}
+
+.roadmap-subtitle{
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 60px;
+}
+
+.roadmap-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.roadmap-card{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 18px;
+    padding: 30px 20px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover{
+    transform: translateY(-10px);
+}
+
+.roadmap-icon{
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.roadmap-card h3{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.roadmap-desc{
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.roadmap-card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.roadmap-card ul li{
+    font-size: 14px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.roadmap-card ul li::before{
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #6ff3ff;
+}
+@media (max-width: 992px){
+    .roadmap-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px){
+    .roadmap-container{
+        grid-template-columns: 1fr;
+    }
+}
+<!---------TOKEN-->
+.tokenomics-section{
+    display: flex;
+    gap: 60px;
+    padding: 120px 80px;
+    background: linear-gradient(135deg,#3b00b9,#6f00ff);
+    color: white;
+}
+
+.tokenomics-left{
+    flex: 1;
+}
+
+.tokenomics-left h2{
+    font-size: 42px;
+    margin-bottom: 6px;
+}
+
+.tokenomics-subtitle{
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.tokenomics-list{
+    list-style: none;
+    padding: 0;
+}
+
+.tokenomics-list li{
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+}
+
+.tokenomics-list span{
+    opacity: 0.85;
+}
+
+.tokenomics-list b{
+    color: #6ff3ff;
+}
+
+.tokenomics-card{
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    color: #2b006f;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.tokenomics-card h3{
+    margin-bottom: 16px;
+    font-size: 26px;
+}
+
+.tokenomics-card p{
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+    .tokenomics-section{
+        flex-direction: column;
+        padding: 80px 30px;
+    }
+}
+
+.tokenomics-card canvas{
+    max-width: 100%;
+    margin-top: 20px;
+}
+/*---------------- CHART --------*/
+.tokenomics-section{
+    display: flex;
+    align-items: center;      /* 🔥 sejajar vertikal */
+    justify-content: space-between;
+    gap: 60px;
+    padding: 120px 80px;
+    background: linear-gradient(135deg,#0d1440, #05001f);
+    color: white;
+}
+
+/* KIRI */
+.tokenomics-left{
+    flex: 1;
+}
+
+.tokenomics-left h2{
+    font-size: 42px;
+    margin-bottom: 6px;
+}
+
+.tokenomics-subtitle{
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.tokenomics-list{
+    list-style: none;
+    padding: 0;
+}
+
+.tokenomics-list li{
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+}
+
+.tokenomics-list b{
+    color: #6ff3ff;
+}
+
+/* KANAN (GAMBAR) */
+.tokenomics-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.tokenomics-image img{
+    width: 420px;        /* 🔥 BESARKAN / KECILKAN DI SINI */
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* efek hover (opsional, keren) */
+.tokenomics-image img:hover{
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px){
+    .tokenomics-section{
+        flex-direction: column;
+        padding: 80px 30px;
+        text-align: center;
+    }
+
+    .tokenomics-image img{
+        width: 280px;
+    }
+}
+
+.tokenomics-image img{
+    width: 700px;  /* misal: 500px, 600px */
+}
+
+
+/*---- Label ----*/
+
+.exchange-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.exchange-section h3 { 
+
+    justify-content: center;
+    align-items: center;
+    color: #6ff3ff; 
+    font-size: 50px; 
+    font-weight: 700; 
+    margin-bottom: 25px; 
+    flex-wrap: wrap;
+}
+
+/* WRAPPER */
+.exchange-item {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 5px 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* UKURAN GAMBAR (UBAH DI SINI) */
+.exchange-item img {
+    height: 200px;        /* 🔥 BESAR / KECIL */
+    max-width: 400px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER */
+.exchange-item:hover {
+    transform: translateY(-6px) scale(1.08);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.exchange-item {
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+    .exchange-item img {
+        height: 40px;
+    }
+}
+
+
+
+/* =======================
+   MOBILE FIX GLOBAL
+   ======================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 12px 20px;
+        width: 100%;
+    }
+
+    nav {
+        display: none; /* opsional: sembunyikan menu di HP */
+    }
+
+    section {
+        padding: 90px 20px;
+    }
+
+    h1, h2 {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px){
+    #beranda {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    #beranda img {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px){
+    .coin-group img {
+        width: 200px !important;
+    }
+}
+
+
+@media (max-width: 768px){
+    .elemen-section {
+        flex-direction: column-reverse;
+        padding: 60px 20px;
+    }
+
+    .elemen-image img {
+        width: 260px;
+        margin-bottom: 30px;
+    }
+
+    .box {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 576px){
+    .roadmap-container {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-card {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 600px){
+    .exchange-item img {
+        height: 45px;
+        max-width: 120px;
+    }
+
+    .exchange-section h3 {
+        font-size: 26px;
+    }
+}
+
+
+
+</style>
+</head>
+
+
+<body>
+
+<header>
+    <!-- KIRI -->
+    <div class="logo">
+        <img src="mona1.png">
+        <span>MONA</span>
+    </div>
+
+    <!-- KANAN -->
+    <div class="right-menu">
+        <nav>
+            <a href="#beranda" data-lang="nav_home"></a>
+            <a href="#tentang" data-lang="nav_about"></a>
+            <a href="#hubungi" data-lang="nav_contact"></a>
+        </nav>
+
+        <div class="lang-switch">
+            <button onclick="setLang('id')">🇮🇩</button>
+            <button onclick="setLang('en')">🇬🇧</button>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- HERO -->
+<section id="beranda">
+    <div>
+        <h1 data-lang="hero_title"></h1>
+        <p data-lang="hero_desc"></p>
+        <a class="btn btn-outline" href="https://t.me/MONANetAnnouncement" data-lang="hero_btn"></a>
+    </div>
+    <img src="mona1.png">
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+    <div>
+        <h1 data-lang="about_title"></h1>
+        <p data-lang="about_p1"></p>
+        <p data-lang="about_p2"></p>
+    </div>
+
+    <div class="coin-group">
+        <img src="coinmona2.png" alt="Mona Coin">
+        <img src="coinmona3.png" alt="Mona Coin">
+    </div>
+</section>
+
+ <!---------------- 4 ELEMEN ----------------->
+
+<section class="elemen-section">
+    <!-- KIRI : KOTAK TEKS -->
+    <div class="elemen-boxes">
+        <div class="box"><b>Mona Fashion (Apparel & Brand Expansion)</b>
+            <p>Mona Fashion adalah lini bisnis pakaian resmi Mona Network yang berfokus pada produksi dan penjualan apparel berkualitas tinggi seperti kaos, hoodie, dan merchandise eksklusif. Brand ini dibangun untuk menggabungkan identitas komunitas Mona dengan tren fashion modern, di mana pemegang MONA mendapatkan manfaat khusus seperti akses early release, edisi terbatas, dan potensi integrasi reward berbasis ekosistem. Mona Fashion menjadi jembatan antara aset digital dan produk nyata yang memiliki nilai, fungsi, dan gaya hidup.</p>
+
+        </div>
+
+        <div class="box"><b>Hydro Staking (Liquidity Engine)</b>
+            <p>Mekanisme yang dirancang untuk menjaga stabilitas harga dan memberi penghargaan kepada pemegangjangka panjang (Diamond Hands).
+            <p>● Konsep: Holder mengunci MONA untuk mendapatkan yield (imbal hasil).</p>
+            <p>● Tier System: <p>○ Puddle Rank: Staking jangka pendek (Fleksibel).</p>
+            <p>○ Ocean Rank: Staking jangka panjang dengan APY tertinggi dan akses prioritas ke fiturekosistem.</p>
+        </div>
+
+        <div class="box"><b>Mona AI Navigator</b>
+            <p>Mona bukan sekadar maskot, dia adalah asisten cerdas berbasis Artificial Intelligence.</p>
+            <p>● MonaGPT: Bot analisis sentimen pasar yang terintegrasi di Telegram & Discord.</p>
+            <p>● Fungsi: Memberikan sinyal tren pasar, mendeteksi pergerakan dompet paus (whale wallet tracker),dan prediksi aliran likuiditas di jaringan Solana. Fitur ini eksklusif untuk holder MONA.</p>
+        </div>
+
+        <div class="box"><b>Mona RWA (Real World Assets)</b>
+        <p>Membawa nilai aset dunia nyata ke dalam blockchain (Tokenisasi).</p>
+        <p>Visi: Membangun platform investasi fraksional di mana $MONA digunakan sebagai alat tukar untukaset nyata yang berfokus pada sektor "Air" dan infrastruktur energi biru (Blue Energy). Inimemberikan nilai intrinsik nyata pada token di luar spekulasi pasar.</p>
+        </div>
+
+        <div class="box"><b> Mona Droplets (Utility NFT)</b>
+        <p>Koleksi seni digital yang berfungsi sebagai kunci akses VIP. </p>
+        <p>Koleksi: 1,000 PFP Generatif Mona dengan atribut unik.</p>
+        <p>Utilitas: Pemilik NFT mendapatkan Boost APY saat Staking, pengurangan biaya transaksi diplatform masa depan, dan akses eksklusif ke grup "Alpha".</p>
+        </div>
+
+    </div>
+
+    <!-- KANAN : GAMBAR -->
+    <div class="elemen-image">
+        <img src="4elemen.png" alt="4 Elemen">
+    </div>
+</section>
+
+<!-------------  ROADMAP  --------------->
+
+<section class="roadmap-section">
+    <h2 class="roadmap-title">MONA NETWORK ROADMAP</h2>
+    <p class="roadmap-subtitle">The Flow to Ocean Dominance</p>
+
+    <div class="roadmap-container">
+
+        <!-- PHASE 1 -->
+        <div class="roadmap-card">
+            <div class="roadmap-icon">🚀</div>
+            <h3>Phase 1<br>The Splash</h3>
+            <p class="roadmap-desc">Peluncuran & Viralitas</p>
+            <ul>
+                <li>Fair Launch</li>
+                <li>Core Team (16)</li>
+                <li>King of the Migration</li>
+                <li>Pumpswap Migration</li>
+                <li>DexScreener Update</li>
+                <li>Guerrilla Marketing</li>
+            </ul>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="roadmap-card">
+            <div class="roadmap-icon">🌊</div>
+            <h3>The Flow</h3>
+            <p class="roadmap-desc">Pertumbuhan Komunitas</p>
+            <ul>
+                <li>CoinGecko Listing</li>
+                <li>1,000+ Holders</li>
+                <li>Dextools #1 Trending</li>
+                <li>Global KOL Partners</li>
+            </ul>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="roadmap-card">
+            <div class="roadmap-icon">💧</div>
+            <h3>The Tide</h3>
+            <p class="roadmap-desc">Rilis Utilitas</p>
+            <ul>
+                <li>Staking dApp (Beta)</li>
+                <li>Mona AI Bot (Telegram)</li>
+                <li>Smart Contract Token</li>
+                <li>NFT Collection Launch</li>
+                <li>Global Clean Water Campaign</li>
+            </ul>
+        </div>
+
+        <!-- PHASE 4 -->
+        <div class="roadmap-card">
+            <div class="roadmap-icon">🌍</div>
+            <h3>The Ocean</h3>
+            <p class="roadmap-desc">Ekspansi Global</p>
+            <ul>
+                <li>RWA Prototype</li>
+                <li>Tier 1 CEX Listing</li>
+                <li>Asia Expansion</li>
+                <li>$100M+ Market Cap</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-------------- TOKENOMICS -------------->
+
+<section class="tokenomics-section">
+
+    <!-- KIRI : TEKS -->
+    <div class="tokenomics-left">
+        <h2>Tokenomics</h2>
+        <p class="tokenomics-subtitle">Token Economy Overview</p>
+
+        <ul class="tokenomics-list">
+            <li><span>Token Name</span><b>Mona Network</b></li>
+            <li><span>Ticker</span><b>$MONA</b></li>
+            <li><span>Network</span><b>Solana</b></li>
+            <li><span>Total Supply</span><b>1,000,000,000 (1 Miliar)</b></li>
+            <li><span>Tax</span><b>0% Buy / 0% Sell</b></li>
+            <li><span>Liquidity</span><b>Burned</b></li>
+            <li><span>Mint Authority</span><b>Revoked</b></li>
+        </ul>
+    </div>
+
+    <!-- KANAN : GAMBAR -->
+    <div class="tokenomics-image">
+        <img src="Roadmap1.png" alt="Tokenomics Chart">
+    </div>
+
+</section>
+
+
+
+    <!----------- Label -------->
+
+
+<section class="exchange-section">
+    <h3>Exchange On :</h3>
+
+    <div class="exchange-list">
+
+        <a href="https://pump.fun/" class="exchange-item" target="_blank">
+            <img src="Pumpfun.png" alt="Pumpfun">
+        </a>
+
+        <a href="https://phantom.com/" class="exchange-item" target="_blank">
+            <img src="Phantom.png" alt="Phantom Wallet">
+        </a>
+
+        <a href="https://www.okx.com" class="exchange-item" target="_blank">
+            <img src="OKX.png" alt="OKX Exchange">
+        </a>
+
+        <a href="https://www.gate.com/id" class="exchange-item" target="_blank">
+            <img src="Gateio.png" alt="Gate.io">
+        </a>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HUBUNGI -->
+<section id="hubungi">
+<h1 data-lang="contact_title"></h1>
+<p data-lang="contact_desc"></p>
+
+<form>
+<input type="text" data-lang-placeholder="form_name" required>
+<input type="email" data-lang-placeholder="form_email" required>
+<textarea rows="5" data-lang-placeholder="form_message"></textarea>
+<button type="submit" data-lang="form_btn"></button>
+</form>
+
+<p data-lang="contact_email"></p>
+<p data-lang="contact_location"></p>
+</section>
+
+<script>
+const text = {
+id:{
+    nav_home:"Beranda",
+    nav_about:"Tentang",
+    nav_contact:"Hubungi",
+
+    hero_title:"Mona Network dibuat di Indonesia dengan teknologi digital modern untuk aset crypto yang transparan.",
+    hero_desc:"Platform terpadu yang merevolusi industri properti dan digital di Indonesia.",
+    hero_btn:"Bergabung dengan Komunitas →",
+
+    about_title:"Tentang Mona Network",
+    about_p1:"Mona Network lahir dari kedalaman bonding curve pump.fun sebagai simbol likuidtas murni, namun kami menolak untuk menjadi sekadar gelombang sesaat.",
+    about_p2:"Visi kami adalah The Great Migration — Mengubah energi komunitas memecoin yang masif menjadi ekosistem DeFi yang fungsional. Kami menggabungkan budaya viral (Meme) dengan teknologi masa depan (Utility). Mona hadir sebagai jembatan antara kesenangan dan aset masa depan yang berkelanjutan melalui integrasi AI, Real World Assets (RWA), dan Staking.",
+
+    contact_title:"Hubungi Kami",
+    contact_desc:"Silakan isi formulir berikut jika ingin menghubungi kami.",
+    contact_email:"📧 Email: support@monanetwork.id",
+    contact_location:"📍 Lokasi: Jakarta, Indonesia",
+
+    form_name:"Nama Lengkap",
+    form_email:"Email",
+    form_message:"Pesan Anda...",
+    form_btn:"Kirim Pesan"
+},
+en:{
+    nav_home:"Home",
+    nav_about:"About",
+    nav_contact:"Contact",
+
+    hero_title:"Mona Network is built in Indonesia using modern digital technology for transparent crypto assets.",
+    hero_desc:"An integrated platform revolutionizing property and digital industries.",
+    hero_btn:"Join the Community →",
+
+    about_title:"About Mona Network",
+    about_p1:"Mona Network was born from the depths of the pump.fun bonding curve as a symbol of pure liquidity, yet we refuse to become merely a fleeting wave.",
+    about_p2:"Our vision is The Great Migration — transforming the massive energy of the memecoin community into a functional DeFi ecosystem. We merge viral culture (memes) with future technology (utility). Mona exists as a bridge between fun and sustainable future assets through the integration of AI, Real World Assets (RWA), and staking.We deliver secure, modern, and user-friendly blockchain innovation.",
+
+    contact_title:"Contact Us",
+    contact_desc:"Please fill out the form below to contact us.",
+    contact_email:"📧 Email: support@monanetwork.id",
+    contact_location:"📍 Location: Jakarta, Indonesia",
+
+    form_name:"Full Name",
+    form_email:"Email",
+    form_message:"Your Message...",
+    form_btn:"Send Message"
+}
+};
+
+function setLang(lang){
+    localStorage.setItem("lang",lang);
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-lang]").forEach(el=>{
+        el.innerHTML = text[lang][el.dataset.lang];
+    });
+
+    document.querySelectorAll("[data-lang-placeholder]").forEach(el=>{
+        el.placeholder = text[lang][el.dataset.langPlaceholder];
+    });
+}
+
+setLang(localStorage.getItem("lang") || "id");
+</script>
+
+
+
+
+</body>
+
+</html>
