@@ -189,31 +189,31 @@ button{
     }
 }
 <!--------------------4elemen ------------------->
+/* CONTAINER SECTION */
 .elemen-section{
     display: flex;
-    justify-content: flex-end; /* ke kanan */
-    align-items: center;
+    flex-direction: column; /* Ubah jadi kolom agar judul di atas */
+    align-items: center; 
+    gap: 40px;
     padding: 80px 60px;
 }
 
-.roadmap-title{
+/* JUDUL */
+.elemen-title{
     font-size: 36px;
     font-weight: 700;
     color: #6ff3ff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* Supaya di tengah */
 }
 
-.elemen-image img{
-    width: 550px;   /* 👉 kecilkan di sini */
-    max-width: 100%;
-}
-
-.elemen-section{
+/* BAGIAN KONTEN */
+.elemen-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    padding: 80px 60px;
+    width: 100%;
 }
 
 /* GRID KOTAK */
@@ -228,10 +228,22 @@ button{
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.3);
     border-radius: 12px;
-    padding: 20px;
-    text-align: center;
+    padding: 25px 20px;
+    text-align: left; /* biar teks rapih kiri */
     font-weight: 500;
     backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* jarak antar elemen di box */
+}
+
+/* JUDUL DI BOX */
+.box b{
+    font-size: 20px;
+    font-weight: 700;
+    color: #6ff3ff;
+    margin-bottom: 10px;
+    display: block;
 }
 
 /* GAMBAR */
@@ -245,11 +257,33 @@ button{
     width: 550px;
     max-width: 100%;
 }
+* DESKRIPSI */
+.box p{
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+}
 
+/* LIST DI BOX */
+.box ul{
+    list-style: disc inside;
+    padding-left: 15px;
+    margin: 10px 0 0 0;
+}
+
+.box ul li{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin-bottom: 5px;
+}
+
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px){
-    .elemen-section{
+    .elemen-content{
         flex-direction: column-reverse;
         text-align: center;
+        gap: 30px;
     }
 
     .elemen-boxes{
@@ -261,7 +295,10 @@ button{
     }
 }
 
+
 <!---------------   roadmap   -------------->
+
+
 
 .roadmap-section{
     padding: 100px 60px;
@@ -269,7 +306,17 @@ button{
     text-align: center;
 }
 
+.roadmap-title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #6ff3ff; /* Warna biru */
+    margin-bottom: 10px;
+}
+
+
 .elemen-title{
+
     font-size: 36px;
     font-weight: 700;
     color: #6ff3ff;
@@ -277,6 +324,7 @@ button{
 }
 
 .roadmap-subtitle{
+    text-align: center;
     font-size: 18px;
     opacity: 0.8;
     margin-bottom: 60px;
@@ -362,6 +410,7 @@ button{
 }
 
 .tokenomics-left h2{
+    color: #ffd500;
     font-size: 42px;
     margin-bottom: 6px;
 }
@@ -697,6 +746,23 @@ button{
 }
 
 
+.social-icons{
+    display: flex;
+    gap: 20px; /* jarak antar ikon */
+    justify-content: left; /* center di halaman */
+    margin-top: 20px;
+}
+
+.social-icon{
+    width: 40px; /* ukuran ikon */
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover{
+    transform: scale(1.1); /* efek hover */
+}
+
 
 
 
@@ -891,55 +957,52 @@ button{
 
  <!---------------- 4 ELEMEN ----------------->
 <section class="elemen-section">
+    <h2 class="elemen-title">The 5 Ecosystem</h2>
 
-    <div class="elemen-image">
-        <img src="4elemen.png" alt="4 Elemen">
+    <div class="elemen-content">
+        <div class="elemen-image">
+            <img src="4elemen.png" alt="4 Elemen">
+        </div>
+
+        <div class="elemen-boxes">
+            <div class="box">
+                <b data-lang="ele_fashion_title"></b>
+                <p data-lang="ele_fashion_desc"></p>
+            </div>
+            <div class="box">
+                <b data-lang="ele_staking_title"></b>
+                <p data-lang="ele_staking_desc"></p>
+                <ul>
+                    <li data-lang="ele_staking_concept"></li>
+                    <li data-lang="ele_staking_tier1"></li>
+                    <li data-lang="ele_staking_tier2"></li>
+                </ul>
+            </div>
+            <div class="box">
+                <b data-lang="ele_ai_title"></b>
+                <p data-lang="ele_ai_desc"></p>
+                <ul>
+                    <li data-lang="ele_ai_feature1"></li>
+                    <li data-lang="ele_ai_feature2"></li>
+                </ul>
+            </div>
+            <div class="box">
+                <b data-lang="ele_rwa_title"></b>
+                <p data-lang="ele_rwa_desc"></p>
+                <p data-lang="ele_rwa_vision"></p>
+            </div>
+            <div class="box">
+                <b data-lang="ele_nft_title"></b>
+                <p data-lang="ele_nft_desc"></p>
+                <ul>
+                    <li data-lang="ele_nft_collection"></li>
+                    <li data-lang="ele_nft_utility"></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div class="elemen-boxes">
-
-        <div class="box">
-            <b data-lang="ele_fashion_title"></b>
-            <p data-lang="ele_fashion_desc"></p>
-        </div>
-
-        <div class="box">
-            <b data-lang="ele_staking_title"></b>
-            <p data-lang="ele_staking_desc"></p>
-            <ul>
-                <li data-lang="ele_staking_concept"></li>
-                <li data-lang="ele_staking_tier1"></li>
-                <li data-lang="ele_staking_tier2"></li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <b data-lang="ele_ai_title"></b>
-            <p data-lang="ele_ai_desc"></p>
-            <ul>
-                <li data-lang="ele_ai_feature1"></li>
-                <li data-lang="ele_ai_feature2"></li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <b data-lang="ele_rwa_title"></b>
-            <p data-lang="ele_rwa_desc"></p>
-            <p data-lang="ele_rwa_vision"></p>
-        </div>
-
-        <div class="box">
-            <b data-lang="ele_nft_title"></b>
-            <p data-lang="ele_nft_desc"></p>
-            <ul>
-                <li data-lang="ele_nft_collection"></li>
-                <li data-lang="ele_nft_utility"></li>
-            </ul>
-        </div>
-
-    </div>
-
 </section>
+
 
 
 
@@ -1122,6 +1185,18 @@ new Chart(ctx, config);
 
 <p data-lang="contact_email"></p>
 <p data-lang="contact_location"></p>
+<!-- BAGIAN FOOTER / SOCIAL -->
+<div class="social-icons">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/username" target="_blank" rel="noopener">
+        <img src="instagram.png" alt="Instagram" class="social-icon">
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/username" target="_blank" rel="noopener">
+        <img src="twt.png" alt="Twitter" class="social-icon">
+    </a>
+</div>
 </section>
 
 <script>
@@ -1187,8 +1262,8 @@ en:{
     nav_contact:"Contact",
             
             hero_title:"Mona Network is built in Indonesia using modern digital technology for transparent crypto assets.",
-            hero_desc:"Platform terpadu yang merevolusi industri properti dan digital di Indonesia.",
-            hero_btn:"Bergabung dengan Komunitas →",
+            hero_desc:"An integrated platform revolutionizing the property and digital industry in Indonesia.",
+            hero_btn:"Join the Community →",
 
 
             about_title:"Tentang Mona Network",
